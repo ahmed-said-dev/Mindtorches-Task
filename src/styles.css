@@ -1,0 +1,18 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  input {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+  

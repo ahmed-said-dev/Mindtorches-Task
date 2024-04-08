@@ -1,0 +1,186 @@
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-pic js-tilt" data-tilt>
+        <img src="assets/images/employee-register.png" alt="IMG" />
+      </div>
+      <form
+        [formGroup]="employeeForm"
+        (ngSubmit)="onSubmit()"
+        class="login100-form validate-form"
+      >
+        <div
+          *ngIf="isSuccess"
+          class="alert alert-success col-12 text-center"
+          role="alert"
+        >
+          <p>Employee Added Successfully</p>
+        </div>
+        <span class="login100-form-title"> Employee Register </span>
+        <div class="wrap-input100 validate-input col-12 col-md-6">
+          <label for="company" class="form-label fw-semibold"
+            >Company Name :</label
+          >
+          <div class="d-flex align-items-center">
+            <input
+              formControlName="companyName"
+              type="text"
+              class="input100 form-control"
+              id="company"
+              placeholder="Company Name"
+              required
+            />
+          </div>
+          <ng-container
+            *ngIf="
+              employeeForm.get('companyName')?.errors &&
+              employeeForm.get('companyName')?.touched
+            "
+          >
+            <small
+              *ngIf="employeeForm.get('companyName')?.getError('required')"
+              class="text-danger"
+            >
+              Company Name is Required.
+            </small>
+          </ng-container>
+        </div>
+
+        <div
+          class="wrap-input100 validate-input col-12 col-md-6 position-relative"
+        >
+          <label for="employee" class="form-label fw-semibold"
+            >Employee Name :</label
+          >
+          <input
+            formControlName="employeeName"
+            type="text"
+            class="input100 form-control"
+            id="employee"
+            placeholder="Employee Name "
+            required
+          />
+          <ng-container
+            *ngIf="
+              employeeForm.get('employeeName')?.errors &&
+              employeeForm.get('employeeName')?.touched
+            "
+          >
+            <small
+              *ngIf="employeeForm.get('employeeName')?.getError('required')"
+              class="text-danger"
+            >
+              Employee Name is Required.
+            </small>
+          </ng-container>
+        </div>
+
+        <div class="wrap-input100 validate-input col-12 col-md-6">
+          <label for="idNo" class="form-label fw-semibold">ID NO :</label>
+          <input
+            formControlName="idNo"
+            type="text"
+            class="input100 form-control"
+            id="idNo"
+            placeholder="ID NO"
+            pattern="[0-9]*"
+            required
+          />
+          <ng-container
+            *ngIf="
+              employeeForm.get('idNo')?.errors &&
+              employeeForm.get('idNo')?.touched
+            "
+          >
+            <small
+              *ngIf="employeeForm.get('idNo')?.getError('required')"
+              class="text-danger"
+            >
+              ID NO is Required.
+            </small>
+            <small
+              *ngIf="employeeForm.get('idNo')?.getError('pattern')"
+              class="text-danger"
+            >
+              Only numbers allowed
+            </small>
+          </ng-container>
+        </div>
+
+        <div
+          class="wrap-input100 validate-input col-12 col-md-6 position-relative"
+        >
+          <label for="DOB" class="form-label fw-semibold">DOB :</label>
+          <input
+            formControlName="DOB"
+            type="date"
+            class="input100 form-control"
+            id="DOB"
+            placeholder="DOB"
+            required
+          />
+          <ng-container
+            *ngIf="
+              employeeForm.get('DOB')?.errors &&
+              employeeForm.get('DOB')?.touched
+            "
+          >
+            <small
+              *ngIf="employeeForm.get('DOB')?.getError('required')"
+              class="text-danger"
+            >
+              Data Of Birth is Required
+            </small>
+          </ng-container>
+        </div>
+
+        <div class="wrap-input100 validate-input col-12 col-md-6">
+          <label for="email" class="form-label fw-semibold">Email :</label>
+          <input
+            formControlName="email"
+            type="email"
+            class="input100 form-control"
+            id="email"
+            placeholder="Email"
+            required
+          />
+          <ng-container
+            *ngIf="
+              employeeForm.get('email')?.errors &&
+              employeeForm.get('email')?.touched
+            "
+          >
+            <small
+              *ngIf="employeeForm.get('email')?.getError('required')"
+              class="text-danger"
+            >
+              Email is Required.
+            </small>
+            <small
+              *ngIf="employeeForm.get('email')?.getError('email')"
+              class="text-danger"
+            >
+              Invalid Email Format.
+            </small>
+          </ng-container>
+        </div>
+
+        <div class="d-flex align-items-center">
+          <div class="container-login100-form-btn">
+            <i
+              (click)="employeeForm.reset()"
+              class="fa-solid fa-arrows-rotate"
+            ></i>
+          </div>
+          <button
+            [disabled]="employeeForm.invalid"
+            type="submit"
+            class="btn btn-dark ms-5 login100-form-btn"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

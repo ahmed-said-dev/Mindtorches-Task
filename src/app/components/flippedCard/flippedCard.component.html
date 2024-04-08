@@ -1,0 +1,145 @@
+<div class="container-custom">
+  <div class="back-btn-custom">
+    <i
+      routerLink="/"
+      class="fa-solid fa-arrow-right-from-bracket"
+      style="color: #b2b2b3"
+    ></i>
+  </div>
+  <div class="item-custom item-one-custom"></div>
+  <div class="item-custom item-two-custom"></div>
+  <div class="item-custom item-three-custom"></div>
+  <div class="item-custom item-four-custom">
+    <div class="item-sub-four-custom"></div>
+    <div class="item-main-four-custom"></div>
+  </div>
+
+  <div class="item-custom item-five-custom"></div>
+
+  <div (click)="flip()" class="card-custom">
+    <div class="face-custom front-custom">
+      <div class="card-face-custom">
+        <div class="body-face-custom">
+          <div class="top-body-face-custom">
+            <div class="content-user-custom">
+              <div class="user-img-custom">
+                <img
+                  class="img-size"
+                  src="assets/images/businessman.png"
+                  alt="employee image"
+                />
+              </div>
+
+              <h3 class="user-name-custom">
+                {{ employee?.employeeName | uppercase }}
+              </h3>
+              <p class="user-position-custom">
+                {{ "creative designer" | uppercase }}
+              </p>
+            </div>
+          </div>
+
+          <div class="bottom-body-face-custom">
+            <div class="info-user-custom">
+              <div class="d-flex justify-content-center">
+                <div style="margin-right: 10px">
+                  <p class="my-0 fw-semibold">ID ON</p>
+                  <p class="my-0 fw-semibold">DOB</p>
+                  <p class="my-0 fw-semibold">PHONE</p>
+                  <p class="my-0 fw-semibold">E-mail</p>
+                </div>
+
+                <div>
+                  <p class="my-0 fw-semibold">: {{ employee?.idNo }}</p>
+                  <p class="my-0 fw-semibold">
+                    : {{ employee?.DOB | date : "dd/MM/yy" }}
+                  </p>
+                  <p class="my-0 fw-semibold">: 123 456 789</p>
+                  <p
+                    class="my-0 fw-semibold overflow-hidden"
+                    style="
+                      white-space: nowrap;
+                      text-overflow: ellipsis;
+                      max-width: 200px;
+                    "
+                  >
+                    : {{ employee?.email }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="mw-100 text-center">
+                <img
+                  src="../../../assets/images/barcode.png"
+                  alt="serial code"
+                  style="height: 125px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="face-custom back-custom">
+      <div class="card-back-custom">
+        <div class="body-back-custom">
+          <div class="top-body-back-custom">
+            <div class="company-logo-custom">
+              <div class="logos-custom">
+                <img
+                  class="logo-one-custom"
+                  src="assets/images/hexagon.png"
+                  alt="company logo"
+                />
+
+                <img
+                  class="logo-two-custom"
+                  src="assets/images/hexagon.png"
+                  alt="company logo"
+                />
+              </div>
+
+              <h3 class="company-name-custom">COMPANY NAME</h3>
+              <p class="company-category-custom">TAGLINE HERE</p>
+            </div>
+          </div>
+
+          <div class="bottom-body-back-custom">
+            <div style="height: 220px">
+              <div class="text-center h-100">
+                <div>
+                  <h2>Terms &amp; Conditions</h2>
+
+                  <p class="about-company-custom">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </p>
+
+                  <p class="about-company-custom">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Facere qui explicabo animi blanditiis non debitis aperiam
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div style="height: 70px">
+              <div class="text-center">
+                <p class="mb-1">
+                  <span class="text-danger fw-semibold">Date of league</span> :
+                  10-03-2021
+                </p>
+                <p class="mt-0">
+                  <span class="text-danger fw-semibold">Expire Date</span> :
+                  20-05-2022
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
